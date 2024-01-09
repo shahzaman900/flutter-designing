@@ -13,21 +13,34 @@ class PhrLaptopVU extends StackedView<PhrVM> {
         body: Column(
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               flex: 1,
               child: Container(
-                // width: 200,
-                height: context.kHeight / 2.5,
-                decoration: BoxDecoration(color: Colors.amberAccent),
+                height: viewModel.isHeaderExpanded
+                    ? context.kHeight / 5.2
+                    : context.kHeight / 14,
+                child: ExpansionTile(
+                  title: const Text('Expansion'),
+                  backgroundColor: Colors.green,
+                  onExpansionChanged: viewModel.onHeaderExpansion,
+                  children: const [
+                    Text('data'),
+                    Text('data'),
+                    Text('data'),
+                    Text('data'),
+                  ],
+                ),
               ),
             ),
             12.spaceX,
             Expanded(
               flex: 3,
               child: Container(
-                  // width: 200,
-                  height: context.kHeight / 2.5,
+                  height: viewModel.isHeaderExpanded
+                      ? context.kHeight / 5.2
+                      : context.kHeight / 14,
                   color: Colors.blueGrey,
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
