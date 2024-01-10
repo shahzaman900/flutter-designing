@@ -18,9 +18,9 @@ class PhrVU extends StackedView<PhrVM> {
               title: const Text('data'),
             )
           : null,
-      body: const CHIResponsiveView(
-          mobile: PhrMobileVU(),
-          webSmall: PhrMobileVU(),
+      body: CHIResponsiveView(
+          mobile: const PhrMobileVU(),
+          webSmall: const PhrMobileVU(),
           medium: PhrLaptopVU(),
           large: PhrLaptopVU()),
     );
